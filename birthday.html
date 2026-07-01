@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Happy Birthday My Sweetheart ❤️</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #ffeef2;
+            --text-color: #4a3728;
+            --accent-color: #ff5e7e;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px 0;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            width: 90%;
+            max-width: 650px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 35px;
+            text-align: center;
+            display: none; 
+            animation: scaleUp 0.5s ease-in-out;
+            margin: auto;
+        }
+
+        .active {
+            display: block;
+        }
+
+        @keyframes scaleUp {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .cursive-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2rem;
+            color: var(--accent-color);
+            margin: 10px 0;
+        }
+
+        .sub-text {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .gif-display {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            margin: 15px auto;
+            border-radius: 15px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 94, 126, 0.3);
+        }
+
+        .btn-no {
+            background-color: #95a5a6;
+        }
+
+        .choice-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .choice-card {
+            background: #fff0f3;
+            border: 2px dashed var(--accent-color);
+            border-radius: 15px;
+            padding: 15px;
+            cursor: pointer;
+            width: 30%;
+            transition: transform 0.3s;
+        }
+
+        .choice-card:hover {
+            transform: translateY(-5px);
+            background: #ffe3e8;
+        }
+
+        .choice-card img {
+            width: 100%;
+            max-height: 100px;
+            object-fit: contain;
+        }
+
+        .profile-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .message-box {
+            text-align: left;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            background: #fff5f6;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .countdown-badge {
+            background: #ffeaa7;
+            color: #d35400;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .fight-fix-stay-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        
+        .story-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .story-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+        
+        .story-item p {
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        .memories-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .memory-item {
+            background: #fff5f6;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+
+        .memory-item img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .memory-item p {
+            margin: 8px 0 0 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        
+        .memory-story-box {
+            margin-top: 25px;
+            background: #ffe3e8;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        .memory-story-box h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .memory-story-box p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .love-text-animated {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: var(--accent-color);
+            margin-top: 40px;
+            display: inline-block;
+            overflow: hidden;
+            border-right: .15em solid var(--accent-color);
+            white-space: nowrap;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-color); }
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            background: #74b9ff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SCREEN 1: Please accept -->
+    <div id="screen1" class="container active">
+        <h2 style="letter-spacing: 2px;">PLS ACCEPT THE GIFT</h2>
+        <img src="https://i.ibb.co/Pvgpf7h6/92033975-8920-46c8-8983-ea10b30d255c.jpg" alt="Cute Penguin" class="gif-display">
+        <div class="btn-group">
+            <button class="btn" onclick="goToScreen('screen2')">YES</button>
+            <button class="btn btn-no" onclick="goToScreen('screen1-alt')">NO</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 1-ALT: No Clicked -->
+    <div id="screen1-alt" class="container">
+        <h2 style="color: #e74c3c;">WHY DID YOU CLICK NO! 😭</h2>
+        <img src="https://i.ibb.co/vt6j5dn/c00fa852-5acd-470d-b662-79ad4863099a.jpg" alt="Crying Penguin" class="gif-display">
+        <div class="btn-group">
+            <button class="btn" onclick="goToScreen('screen1')">TRY AGAIN 🥺</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 2: 3 Cards Selection -->
+    <div id="screen2" class="container">
+        <h2>Choose a penguin 🐧</h2>
+        <p class="sub-text">Each one has something special to say ✨</p>
+        <div class="choice-grid">
+            <div class="choice-card" onclick="openChoice('birthday')">
+                <img src="https://i.ibb.co/2xXLJLL/4bb1f38b-391a-43fd-b33e-22ec7d970007.jpg" alt="Card 1">
+                <p>Card 1</p>
+            </div>
+            <div class="choice-card" onclick="openChoice('memories')">
+                <img src="https://i.ibb.co/2xXLJLL/4bb1f38b-391a-43fd-b33e-22ec7d970007.jpg" alt="Card 2">
+                <p>Card 2</p>
+            </div>
+            <div class="choice-card" onclick="openChoice('hug')">
+                <img src="https://i.ibb.co/2xXLJLL/4bb1f38b-391a-43fd-b33e-22ec7d970007.jpg" alt="Card 3">
+                <p>Card 3</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 3: Card 1 (Birthday & Fight, Fix, Stay) -->
+    <div id="screen3-birthday" class="container">
+        <h1 class="cursive-title">Advance Happy Birthday! 🎉</h1>
+        <div class="countdown-badge">Inka 170 Days to go! ⏳</div>
+        <div class="profile-layout">
+            <div class="message-box">
+                Advance happy birthday my sweet heart I know nv na best friend and best person na life lo a special day kosam wait chestunna inka 170 days lo ni 17 years dati 18 years ki valthav ni e life journey chala happy ga undali ani manaspurthiga korukuntunna na bujji mom love you ❤️
+            </div>
+            <div class="fight-fix-stay-grid">
+                <div class="story-item">
+                    <img src="https://i.ibb.co/pr58WJG8/b069791b-bd4a-4900-a7f9-aeaa68110149.jpg" alt="We Fight">
+                    <p>We Fight 😤</p>
+                </div>
+                <div class="story-item">
+                    <img src="https://i.ibb.co/pvfqhVJ2/c25e8114-bdf2-4778-a59b-bbb4f8b7c070.jpg" alt="We Fix">
+                    <p>We Fix 🩹</p>
+                </div>
+                <div class="story-item">
+                    <img src="https://i.ibb.co/6JqSG3D6/73e4f80a-b798-41b2-b817-209b0e11812e.jpg" alt="We Stay">
+                    <p>We Stay 🥰</p>
+                </div>
+            </div>
+        </div>
+        <button class="btn back-btn" onclick="goToScreen('screen2')">Go Back</button>
+    </div>
+
+    <!-- SCREEN 4: Card 2 (Memories) -->
+    <div id="screen4-memories" class="container">
+        <h2 class="cursive-title">Our Special Memories 📸</h2>
+        
+        <div class="memories-grid">
+            <div class="memory-item">
+                <img src="https://i.ibb.co/zTN2pFP7/ba13f986-3aea-4268-a19e-a46cc0edc8e6.png" alt="First Chat">
+                <p>First Chat<br>(May 13)</p>
+            </div>
+            <div class="memory-item">
+                <img src="https://i.ibb.co/1Y9YTV3x/a2d8e52c-c350-4f73-ae18-b822f97eac7d.png" alt="First Propose">
+                <p>First Propose<br>(May 17)</p>
+            </div>
+            <div class="memory-item">
+                <img src="https://i.ibb.co/ccCdvppt/164f89f5-264f-4819-8ff8-533834c687a8.png" alt="First Meet">
+                <p>First Meet<br>(June 26)</p>
+            </div>
+            <div class="memory-item">
+                <img src="https://i.ibb.co/q3BJ7HyP/Gemini-Generated-Image-plehqyplehqypleh.png" alt="We Still">
+                <p>We Still...</p>
+            </div>
+        </div>
+        
+        <!-- Story Text Box -->
+        <div class="memory-story-box">
+            <h3>First meet experience ✨</h3>
+            <p>June 26 first time thanani chudadam chala tention padda nachuthana ledha ani, finally thanani chuse time vachindhi. Lopalaki enter avvagane enthamandhi unna thane naku kanpinchindhi. Ala eye contact ichesariki na tention duble aindhi, vella pakkanakurchunna kani thanu chala cute ga undhi. Princess laga, story lo chadive sindrillla laga, a cheeks chusi pattukovalanpinchindhi kani chala controll cheskunna. Finally first date movie chala bagundhi, adhi thanatho kalsi chudadam inka bagundhi. Thana leg pattukogane thana moham lo a happiness chusaka idhi chudadanike ga varsham 40 kilometers travell chesindhi.. thank you kalsinanduku ❤️</p>
+        </div>
+
+        <button class="btn back-btn" onclick="goToScreen('screen2')">Go Back</button>
+    </div>
+
+    <!-- SCREEN 5: Card 3 (Hug) -->
+    <div id="screen5-hug" class="container">
+        <div id="hug-initial">
+            <h2>Virtual hug for ya! I MISS YOU 🤗</h2>
+            <img src="https://i.ibb.co/Pvgpf7h6/92033975-8920-46c8-8983-ea10b30d255c.jpg" alt="Miss You" class="gif-display" style="width: 220px; cursor: pointer;" onclick="triggerLoveAnimation()">
+            <p style="color: #888; font-size: 0.9rem;">(Click on the penguin to get a hug!)</p>
+        </div>
+        <div id="love-final" style="display: none;">
+            <img src="https://i.ibb.co/RGH94kv8/65f85d59-99c4-41d3-9fb5-3cefb2992e74.jpg" alt="Big Hug" class="gif-display" style="width: 220px;">
+            <br>
+            <div class="love-text-animated">I Love You ❤️</div>
+        </div>
+        <br>
+        <button class="btn back-btn" onclick="resetAndGoBack()">Go Back</button>
+    </div>
+
+    <script>
+        function goToScreen(screenId) {
+            const containers = document.querySelectorAll('.container');
+            containers.forEach(box => box.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+            window.scrollTo(0, 0); // Scroll to top on screen change
+        }
+
+        function openChoice(choiceType) {
+            if(choiceType === 'birthday') {
+                goToScreen('screen3-birthday');
+                triggerCrackers();
+            } else if(choiceType === 'memories') {
+                goToScreen('screen4-memories');
+            } else if(choiceType === 'hug') {
+                goToScreen('screen5-hug');
+            }
+        }
+
+        function triggerCrackers() {
+            var duration = 4 * 1000;
+            var end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 6,
+                    angle: 55,
+                    spread: 60,
+                    origin: { x: 0, y: 0.8 },
+                    colors: ['#ff5e7e', '#74b9ff', '#ffeaa7', '#55efc4', '#a29bfe']
+                });
+                confetti({
+                    particleCount: 6,
+                    angle: 125,
+                    spread: 60,
+                    origin: { x: 1, y: 0.8 },
+                    colors: ['#ff5e7e', '#74b9ff', '#ffeaa7', '#55efc4', '#a29bfe']
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+
+        function triggerLoveAnimation() {
+            document.getElementById('hug-initial').style.display = 'none';
+            document.getElementById('love-final').style.display = 'block';
+            triggerCrackers();
+        }
+
+        function resetAndGoBack() {
+            document.getElementById('hug-initial').style.display = 'block';
+            document.getElementById('love-final').style.display = 'none';
+            goToScreen('screen2');
+        }
+    </script>
+</body>
+</html>
